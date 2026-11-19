@@ -1,0 +1,36 @@
+START HERE — NEURO-GENETIC LENET-5
+
+1. Open this extracted folder in VS Code.
+2. Use 64-bit Python 3.11 and Node.js 20+.
+3. In the VS Code PowerShell terminal, run:
+
+   py -3.11 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   python -m pip install --upgrade pip
+   pip install -r requirements.txt
+   python check_environment.py
+   cd frontend
+   npm install
+   cd ..
+
+4. Train the model:
+
+   python train.py
+
+5. Open a SECOND terminal at the project root and run:
+
+   .\.venv\Scripts\Activate.ps1
+   python -m uvicorn backend.api:app --host 127.0.0.1 --port 8000 --reload
+
+6. Open a THIRD terminal and run:
+
+   cd frontend
+   npm run dev
+
+7. Open http://127.0.0.1:5173 in Chrome.
+
+Input: draw one digit (0–9), upload one cropped PNG/JPG/WebP digit, or click an actual MNIST test sample in Live Studio.
+
+For the larger report experiment, use: python train.py --profile full
+
+Read README.md for full explanation, input guidance, demo order, troubleshooting and the research reference.

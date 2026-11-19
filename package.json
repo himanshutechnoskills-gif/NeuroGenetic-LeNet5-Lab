@@ -1,0 +1,11 @@
+{
+  "name": "neurogenetic-lenet5",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB \"./.venv/Scripts/python.exe -m uvicorn backend.api:app --host 127.0.0.1 --port 8000\" \"npm --prefix frontend run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
